@@ -8,7 +8,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Lucide icons for high-quality SVG icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-   
     <style>
         /* Custom styles for animations and font */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
@@ -20,14 +19,34 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        /* New Floating Logo Animation */
+        /* Floating Logo Animation (Subtle Drift) */
         .animate-float {
-            animation: floatAnimation 8s ease-in-out infinite;
+            animation: floatAnimation 10s ease-in-out infinite; /* Increased duration for slower movement */
         }
         @keyframes floatAnimation {
-            0% { transform: translate(0, 0) rotate(0deg) scale(1); }
-            50% { transform: translate(10px, -20px) rotate(5deg) scale(1.05); }
+            0% { transform: translate(-150, 150) rotate(0deg) scale(1); }
+            /* Subtle drift left and down, with slight scale up */
+            25% { transform: translate(-250px, 150px) rotate(-5deg) scale(4.02); } 
+            50% { transform: translate(-750px, 350px) rotate(-5deg) scale(3.02); } 
+            75% { transform: translate(-250px, 150px) rotate(-5deg) scale(4.02); } 
             100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+        }
+        /* New Subtle Pulse Animation for Tagline (More Noticeable) */
+        @keyframes pulseSubtle {
+            0%, 100% { 
+                opacity: 1; 
+                transform: scale(1);
+                /* Initial state: No glow */
+                text-shadow: 0 0 5px rgba(255, 255, 255, 0.0);
+            }
+            50% { 
+                opacity: 0.95; 
+                transform: scale(1.03); /* Larger scale change for visibility */
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Subtle glow effect */
+            }
+        }
+        .animate-pulse-subtle {
+            animation: pulseSubtle 2.5s infinite ease-in-out; /* Slightly faster cycle for more visible pulse */
         }
     </style>
 </head>
@@ -38,9 +57,11 @@
         
         <!-- Background Image/Overlay -->
         <div class="absolute inset-0 z-0">
+            <!-- Placeholder image for the background -->
             <img 
                 src="main-image.png" 
                 alt="Background" 
+                onerror="this.onerror=null; this.src='https://placehold.co/1200x800/1F2937/FFFFFF?text=Placeholder+Image';"
                 class="w-full h-full object-cover opacity-30 scale-105"
             />
             <div class="absolute inset-0 bg-gradient-to-tr from-gray-900 via-gray-900/80 to-blue-900/40"></div>
@@ -51,12 +72,17 @@
             <div class="container mx-auto px-6 flex justify-between items-center">
                 <span class="flex flex-col items-start">
                     <span class="text-2xl font-bold tracking-tighter text-white flex items-center gap-2">
-                        <!-- Icon Placeholder for Logo -->
-                        <img src="logo-boombee.svg" alt="BoomBee Logo" class="w-6 h-6 rounded-md object-contain" />
+                         <img 
+                            src="logo-boombee.png" 
+                            alt="BoomBee Logo" 
+                            class="w-6 h-6 rounded-lg"
+                            onerror="this.onerror=null; this.src='https://placehold.co/24x24/FFFFFF/000000?text=B';"
+                        />
                         <span id="company-name-nav">BoomBee</span>
                     </span>
-                    <span class="text-xs font-light text-white/70">
-                        <i class="italic font-normal">more than a wow...</span></i>
+                    <!-- Tagline with new, more noticeable pulse animation -->
+                    <span class="text-xs font-light text-white/70 animate-pulse-subtle">
+                        <i class="italic font-normal">more than a wow...</i>
                     </span>
                 </span>
                 <div class="flex gap-4">
@@ -69,13 +95,21 @@
         
         <!-- Main Content -->
         <main class="flex-grow flex flex-col items-center justify-center relative z-10 px-4 py-20 text-center">
-                <div class="animate-fade-in-up">
-                    <!-- FLYING LOGO ELEMENT -->
-                <!-- Using a large, subtle version of the 'zap' icon with a slow float animation -->
-                <div id="flying-logo" class="hidden lg:block absolute right-10 top-1/4 w-32 h-32 z-0 opacity-10 text-blue-400 animate-float pointer-events-none">
-                    <i data-lucide="zap" class="w-full h-full"></i>
-                </div>
-                <!-- /FLYING LOGO ELEMENT -->
+            
+            <!-- FLYING LOGO ELEMENT (Visibility adjusted for all screen sizes) -->
+            <!-- Using a large, subtle version of the 'zap' icon with a slow float animation -->
+            <div id="flying-logo" class="block absolute right-2 top-10 w-20 h-20 md:w-32 md:h-32 z-0 opacity-10 text-blue-400 animate-float pointer-events-none">
+                 <img 
+                            src="logo-boombee.png" 
+                            alt="BoomBee Logo" 
+                            class="w-6 h-6 rounded-lg"
+                            onerror="this.onerror=null; this.src='https://placehold.co/24x24/FFFFFF/000000?text=B';"
+                        />
+            </div>
+            <!-- /FLYING LOGO ELEMENT -->
+            
+            <div class="animate-fade-in-up">
+                
                 <span class="inline-block py-1 px-4 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-200 text-sm font-semibold mb-8 tracking-wider backdrop-blur-sm">
                 LAUNCHING SOON
                 </span>
@@ -84,9 +118,9 @@
                 Something Amazing <br/> is in the Works.
                 </h1>
                 
-                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-                We are crafting a new experience for <span id="company-name-hero" class="text-blue-300 font-extrabold">BoomBee</span> <span class="text-gray-500 text-xl font-normal">Powered by RAIS GLOBAL</span> <br class="hidden md:block"/>
-                Premium essentials coming to Amazon & Noon.
+                <p class="text-2xl md:text-3xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed tracking-wide">
+                    We are crafting a new experience for <span id="company-name-hero" class="text-blue-300 font-extrabold">BoomBee</span> <span class="text-gray-500 text-xl font-normal">Powered by RAIS GLOBAL</span> <br class="hidden md:block"/>
+                    <span class="text-white font-extrabold">Premium Essentials</span> coming soon to Amazon & Noon.
                 </p>
 
                 <!-- Countdown Timer Container -->
@@ -111,7 +145,6 @@
                     </form>
                     <div id="success-message" class="hidden"></div>
                 </div>
-
             </div>
         </main>
 
@@ -124,6 +157,7 @@
     <script>
         // --- Configuration ---
         const COMPANY_NAME = "BoomBee";
+        // Set launch date far in the future to ensure countdown runs
         const LAUNCH_DATE_STRING = "2026-01-26T00:00:00"; 
         const LAUNCH_DATE = new Date(LAUNCH_DATE_STRING);
         const LLM_MODEL_NAME = 'gemini-2.5-flash-preview-09-2025';
@@ -183,7 +217,7 @@
             }
         }
 
-        // --- Email Form Logic ---
+        // --- Email Form Logic (Simulated) ---
 
         function handleEmailSubmit(event) {
             event.preventDefault();
@@ -240,10 +274,10 @@
             keywordInput.disabled = isLoading;
             generateButton.innerHTML = isLoading 
                 ? `<i data-lucide="loader" class="w-4 h-4 animate-spin"></i> Generating...`
-                : `Generate ✨`;
+                : `Generate Copy <i data-lucide="wand" class="w-5 h-5"></i>`;
             
             if (isLoading) {
-                resultsDiv.innerHTML = `<div class="text-white mt-4 flex items-center justify-center gap-2"><i data-lucide="loader" class="w-5 h-5 animate-spin"></i> Generating copy for "${keyword}"...</div>`;
+                resultsDiv.innerHTML = `<div class="text-white mt-4 flex items-center justify-center gap-2"><i data-lucide="loader" class="w-5 h-5 animate-spin text-yellow-500"></i> Generating copy for "${keyword}"...</div>`;
                 lucide.createIcons(); // Ensure the loader icon is rendered
             } else if (!isLoading && !resultsDiv.innerHTML.includes('Summary')) {
                  resultsDiv.innerHTML = '';
@@ -268,16 +302,18 @@
             ).join('');
 
             resultsDiv.innerHTML = `
-                <div class="bg-gray-700/30 border border-gray-700 rounded-lg p-6 text-left animate-fade-in">
-                    <p class="text-sm font-semibold text-yellow-300 mb-2">Summary for "${keyword}":</p>
-                    <p class="text-gray-200 mb-4 italic">"${results.marketingSummary}"</p>
+                <div class="bg-gray-800 border border-gray-600 rounded-lg p-6 text-left animate-fade-in shadow-lg">
+                    <p class="text-sm font-semibold text-yellow-300 mb-3 flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4"></i> Summary for "${keyword}":</p>
+                    <p class="text-gray-200 mb-4 italic leading-relaxed text-base">"${results.marketingSummary}"</p>
 
-                    <p class="text-sm font-semibold text-yellow-300 mb-2 mt-4">Suggested Taglines:</p>
-                    <ul class="list-disc list-inside space-y-1 text-gray-100">
+                    <p class="text-sm font-semibold text-yellow-300 mb-2 mt-4 border-t border-gray-700 pt-4 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> Suggested Taglines:</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-100 pl-4">
                         ${taglineList}
                     </ul>
                 </div>
             `;
+            // Ensure icons are rendered in the result box
+            lucide.createIcons();
         }
         
         /**
@@ -372,6 +408,7 @@
 
             // Attach Event Listeners
             document.getElementById('notify-form').addEventListener('submit', handleEmailSubmit);
+            // Ensure the new tagline form listener is attached
             document.getElementById('tagline-form').addEventListener('submit', handleTaglineSubmit);
 
             // Render all Lucide Icons
@@ -381,13 +418,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
