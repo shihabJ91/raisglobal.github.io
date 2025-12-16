@@ -1,317 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>RAIS GLOBAL LLC – Coming Soon</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="RAIS GLOBAL LLC – Innovating Your Steps. Official website coming soon." />
-  <link rel="icon" type="image/x-icon" href="rais-favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="rais-favicon-32.png">
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
-  <style>
-    :root {
-      --bg: #020b10;
-      --bg-accent: #071b24;
-      --brand: #f6c453;      /* warm gold */
-      --text-main: #f9fafb;
-      --text-sub: #9ca3af;
-      --accent-soft: rgba(246,196,83,0.12);
-      --border-soft: rgba(148,163,184,0.35);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(circle at top, #062030 0, var(--bg) 55%, #000 100%);
-      color: var(--text-main);
-    }
-
-    .wrapper {
-      width: 100%;
-      max-width: 980px;
-      padding: 24px;
-    }
-
-    .card {
-      position: relative;
-      background: linear-gradient(145deg, var(--bg-accent), rgba(2,17,26,0.95));
-      border-radius: 24px;
-      padding: 32px 24px;
-      border: 1px solid var(--border-soft);
-      box-shadow:
-        0 24px 60px rgba(0,0,0,0.6),
-        0 0 0 1px rgba(15,23,42,0.7);
-      backdrop-filter: blur(16px);
-      overflow: hidden;
-    }
-
-    @media (min-width: 768px) {
-      .card {
-        padding: 40px 48px;
-      }
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      width: 280px;
-      height: 280px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, rgba(246,196,83,0.16), transparent 60%);
-      top: -100px;
-      right: -40px;
-      pointer-events: none;
-    }
-
-    .logo-row {
-      /* display: flex; */
-      align-items: center;
-      gap: 18px;
-      margin-bottom: 28px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .logo-mark {
-      width: 100%;
-      height: 100%;
-      border-radius: 20px;
-      background: radial-gradient(circle at 30% 0, rgba(246,196,83,0.4), rgba(15,23,42,1));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(148,163,184,0.55);
-      overflow: hidden;
-    }
-
-    .logo-mark img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .brand-text h1 {
-      font-size: 1.4rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--brand);
-    }
-
-    .brand-text p {
-      font-size: 0.8rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--text-sub);
-      margin-top: 4px;
-    }
-
-    @media (min-width: 768px) {
-      .brand-text h1 {
-        font-size: 1.6rem;
-      }
-      .brand-text p {
-        font-size: 0.85rem;
-      }
-    }
-
-    .content {
-      position: relative;
-      z-index: 1;
-      margin-top: 12px;
-      display: grid;
-      gap: 24px;
-    }
-
-    @media (min-width: 768px) {
-      .content {
-        grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-        align-items: center;
-        gap: 36px;
-      }
-    }
-
-    .headline {
-      font-size: 1.9rem;
-      font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 10px;
-    }
-
-    .sub {
-      font-size: 0.98rem;
-      color: var(--text-sub);
-      max-width: 32rem;
-    }
-
-    .pill-row {
-      margin-top: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .pill {
-      border-radius: 999px;
-      padding: 8px 13px;
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border: 1px solid rgba(148,163,184,0.5);
-      background: linear-gradient(135deg, rgba(15,23,42,0.6), rgba(15,23,42,0.2));
-      color: var(--text-sub);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .pill span.dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--brand);
-    }
-
-    .right-panel {
-      background: radial-gradient(circle at top left, var(--accent-soft), transparent 60%);
-      border-radius: 20px;
-      padding: 18px 18px 16px;
-      border: 1px solid rgba(148,163,184,0.4);
-    }
-
-    .right-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-sub);
-      margin-bottom: 10px;
-    }
-
-    .date-row {
-      font-size: 1.1rem;
-      font-weight: 500;
-      margin-bottom: 14px;
-      color: var(--text-main);
-    }
-
-    .date-row span {
-      color: var(--brand);
-    }
-
-    .info-line {
-      font-size: 0.85rem;
-      color: var(--text-sub);
-      margin-bottom: 10px;
-    }
-
-    .info-line strong {
-      color: var(--text-main);
-    }
-
-    .contact-email {
-      margin-top: 6px;
-      font-size: 0.85rem;
-    }
-
-    .contact-email a {
-      color: var(--brand);
-      text-decoration: none;
-      border-bottom: 1px dashed rgba(246,196,83,0.6);
-    }
-
-    .contact-email a:hover {
-      border-bottom-style: solid;
-    }
-
-    .footer {
-      margin-top: 24px;
-      font-size: 0.75rem;
-      color: #D3AF37;
-      text-align: center;
-    }
-
-    .footer span {
-      color: var(--brand);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoomBee - Launching Soon</title>
+    <!-- Load Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide icons for high-quality SVG icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom styles for animations and font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
-<body>
-  <div class="wrapper">
-    <main class="card">
-      <header class="logo-row">
-        <div class="logo-mark">
-          <!-- Replace rais-logo.png with your actual logo file name -->
-          <img src="rais-logo.jpg" alt="RAIS GLOBAL LLC Logo">
-        </div>
-        <!-- <div class="brand-text">
-          <h1>RAIS GLOBAL LLC</h1>
-          <p>INNOVATING YOUR STEPS</p>
-        </div> -->
-      </header>
+<body class="bg-gray-900">
 
-      <section class="content">
-        <div>
-          <h2 class="headline">We’re crafting something intelligent for your next steps.</h2>
-          <p class="sub">
-            RAIS GLOBAL LLC is preparing a new digital presence connecting technology, trading
-            and innovation. Our full website is under development and will be live soon.
-          </p>
-
-          <div class="pill-row">
-            <div class="pill">
-              <span class="dot"></span>
-              Coming Soon
-            </div>
-            <div class="pill">
-              Smart Solutions
-            </div>
-            <div class="pill">
-              E-Commerce &amp; Technology
-            </div>
-          </div>
+    <!-- Main Container -->
+    <div class="min-h-screen flex flex-col relative overflow-hidden">
+        
+        <!-- Background Image/Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=2000" 
+                alt="Background" 
+                class="w-full h-full object-cover opacity-30 scale-105"
+            />
+            <div class="absolute inset-0 bg-gradient-to-tr from-gray-900 via-gray-900/80 to-blue-900/40"></div>
         </div>
 
-        <aside class="right-panel">
-          <div class="right-label">Stay Connected</div>
-          <div class="date-row">
-            Launching in <span>2026</span>
-          </div>
-          <p class="info-line">
-            For business or partnership enquiries, reach out to:
-          </p>
-          <p class="contact-email">
-            Email: <a href="mailto:info@raisglobal.com">info@raisglobal.com</a><br/>
-            Phone: <strong>+971 50 986 9591</strong>
-          </p>
-        </aside>
-      </section>
+        <!-- Navbar -->
+        <nav class="absolute w-full z-50 top-0 py-6">
+            <div class="container mx-auto px-6 flex justify-between items-center">
+                <span class="flex flex-col items-start">
+                    <span class="text-2xl font-bold tracking-tighter text-white flex items-center gap-2">
+                        <!-- Icon Placeholder for Logo -->
+                        <i data-lucide="shopping-bag" class="w-6 h-6 text-white"></i>
+                        <span id="company-name-nav">BoomBee</span>.
+                    </span>
+                    <span class="text-xs font-light text-white/70">
+                        <i class="italic font-normal">Powered by <span id="parent-company-name">RAIS GLOBAL</span></i>
+                    </span>
+                </span>
+                <div class="flex gap-4">
+                     <!-- Social placeholders -->
+                     <a href="#" class="text-white/80 hover:text-white transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                     <a href="#" class="text-white/80 hover:text-white transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="flex-grow flex flex-col items-center justify-center relative z-10 px-4 py-20 text-center">
+            <div class="animate-fade-in-up">
+                
+                <span class="inline-block py-1 px-4 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-200 text-sm font-semibold mb-8 tracking-wider backdrop-blur-sm">
+                LAUNCHING SOON
+                </span>
+                
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight leading-none">
+                Something Amazing <br/> is in the Works.
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                We are crafting a new experience for <span id="company-name-hero" class="text-blue-400 font-bold">BoomBee</span>. <br class="hidden md:block"/>
+                Premium essentials coming to Amazon & Noon.
+                </p>
 
-      <div class="footer">
-        &copy; <span id="year"></span> RAIS GLOBAL LLC. All rights reserved.
-      </div>
-    </main>
-  </div>
+                <!-- Countdown Timer Container -->
+                <div id="countdown-container" class="flex flex-wrap justify-center gap-2 mt-10 mb-12">
+                    <!-- Timer boxes will be injected here by JavaScript -->
+                </div>
 
-  <script>
-    // Dynamic year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+                <!-- Email Form Container -->
+                <div class="max-w-xl mx-auto mb-12" id="email-form-container">
+                    <p class="text-gray-400 mb-4 text-sm font-medium uppercase tracking-wide">Get notified when we go live</p>
+                    <form id="notify-form" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto w-full">
+                        <input 
+                            type="email" 
+                            id="email-input"
+                            required
+                            placeholder="Enter your email address" 
+                            class="flex-1 px-6 py-4 rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-4 focus:ring-blue-500/50 text-lg shadow-xl"
+                        />
+                        <button type="submit" class="px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-500 transition shadow-xl text-lg whitespace-nowrap flex items-center justify-center gap-2">
+                            <i data-lucide="bell" class="w-5 h-5"></i> Notify Me
+                        </button>
+                    </form>
+                    <div id="success-message" class="hidden"></div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="relative z-10 py-6 text-center text-gray-500 text-sm">
+            <p>&copy; <span id="current-year"></span> <span id="company-name-footer">BoomBee</span>. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // --- Configuration ---
+        const COMPANY_NAME = "BoomBee";
+        const LAUNCH_DATE_STRING = "2025-01-26T00:00:00"; 
+        const LAUNCH_DATE = new Date(LAUNCH_DATE_STRING);
+        const LLM_MODEL_NAME = 'gemini-2.5-flash-preview-09-2025';
+        const apiKey = ""; // API key is provided by the environment
+
+        // --- Utility Functions ---
+
+        /**
+         * Renders the time box element for the countdown.
+         * @param {string} val - The numeric value (e.g., '05').
+         * @param {string} label - The label (e.g., 'Days').
+         * @returns {string} The HTML string for the time box.
+         */
+        function getTimeBoxHtml(val, label) {
+            return `
+                <div class="flex flex-col items-center mx-2 md:mx-4">
+                    <div class="w-16 h-16 md:w-24 md:h-24 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center border border-white/20 shadow-2xl">
+                        <span class="text-2xl md:text-5xl font-bold text-white">${String(val).padStart(2, '0')}</span>
+                    </div>
+                    <span class="text-xs md:text-sm text-blue-200 mt-3 uppercase tracking-widest font-semibold">${label}</span>
+                </div>
+            `;
+        }
+
+        /**
+         * Calculates the remaining time until the launch date.
+         * @returns {Object} Time left in days, hours, minutes, and seconds.
+         */
+        function calculateTimeLeft() {
+            const difference = +LAUNCH_DATE - +new Date();
+            let timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
+
+            if (difference > 0) {
+                timeLeft = {
+                    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+                    minutes: Math.floor((difference / 1000 / 60) % 60),
+                    seconds: Math.floor((difference / 1000) % 60),
+                };
+            }
+            return timeLeft;
+        }
+
+        // --- Countdown Timer Logic ---
+
+        function renderCountdown() {
+            const timeLeft = calculateTimeLeft();
+            const container = document.getElementById('countdown-container');
+            
+            if (container) {
+                let timerHtml = '';
+                timerHtml += getTimeBoxHtml(timeLeft.days, 'Days');
+                timerHtml += getTimeBoxHtml(timeLeft.hours, 'Hours');
+                timerHtml += getTimeBoxHtml(timeLeft.minutes, 'Mins');
+                timerHtml += getTimeBoxHtml(timeLeft.seconds, 'Secs');
+                container.innerHTML = timerHtml;
+            }
+        }
+
+        // --- Email Form Logic ---
+
+        function handleEmailSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('notify-form');
+            const successMessageDiv = document.getElementById('success-message');
+
+            // Simulate form submission success
+            form.classList.add('hidden');
+            successMessageDiv.innerHTML = `
+                <div class="bg-green-500/20 border border-green-500/50 backdrop-blur-md text-white px-8 py-4 rounded-lg flex items-center gap-3 animate-fade-in mx-auto max-w-md">
+                    <i data-lucide="check" class="w-6 h-6 text-green-400"></i>
+                    <div class="text-left">
+                        <p class="font-bold">You're on the list!</p>
+                        <p class="text-sm text-green-100">Watch your inbox for the launch alert.</p>
+                    </div>
+                </div>
+            `;
+            successMessageDiv.classList.remove('hidden');
+            // Re-render lucide icons
+            lucide.createIcons();
+        }
+
+
+        // --- Gemini Tagline Generator Logic ---
+
+        const systemPrompt = "You are a world-class marketing copywriter specializing in short, catchy taglines for e-commerce products in the Middle East market. The brand is focused on high-quality essentials sold on Amazon and Noon. Generate three distinct, punchy taglines (maximum 8 words each) and one professional marketing summary (one sentence).";
+
+        const responseSchema = {
+            type: "OBJECT",
+            properties: {
+                taglines: {
+                    type: "ARRAY",
+                    description: "An array of three short, punchy marketing taglines (max 8 words each).",
+                    items: { type: "STRING" }
+                },
+                marketingSummary: {
+                    type: "STRING",
+                    description: "A single, professional sentence summarizing the product category.",
+                }
+            },
+            required: ["taglines", "marketingSummary"]
+        };
+
+        /**
+         * Updates the UI to show a loading state.
+         * @param {boolean} isLoading 
+         */
+        function setLoadingState(isLoading, keyword) {
+            const resultsDiv = document.getElementById('generator-results');
+            const generateButton = document.getElementById('generate-button');
+            const keywordInput = document.getElementById('keyword-input');
+
+            generateButton.disabled = isLoading;
+            keywordInput.disabled = isLoading;
+            generateButton.innerHTML = isLoading 
+                ? `<i data-lucide="loader" class="w-4 h-4 animate-spin"></i> Generating...`
+                : `Generate ✨`;
+            
+            if (isLoading) {
+                resultsDiv.innerHTML = `<div class="text-white mt-4 flex items-center justify-center gap-2"><i data-lucide="loader" class="w-5 h-5 animate-spin"></i> Generating copy for "${keyword}"...</div>`;
+                lucide.createIcons(); // Ensure the loader icon is rendered
+            } else if (!isLoading && !resultsDiv.innerHTML.includes('Summary')) {
+                 resultsDiv.innerHTML = '';
+            }
+        }
+
+        /**
+         * Renders the structured results from the Gemini API.
+         * @param {Object} results - The parsed JSON result.
+         * @param {string} keyword - The input keyword.
+         */
+        function renderResults(results, keyword) {
+            const resultsDiv = document.getElementById('generator-results');
+            
+            if (!results || !results.taglines || !results.marketingSummary) {
+                resultsDiv.innerHTML = `<div class="text-red-400 bg-red-900/50 p-4 rounded-lg mt-4 text-sm">Error: Received incomplete or invalid data from API.</div>`;
+                return;
+            }
+
+            const taglineList = results.taglines.map(tagline => 
+                `<li class="pl-2">"${tagline}"</li>`
+            ).join('');
+
+            resultsDiv.innerHTML = `
+                <div class="bg-gray-700/30 border border-gray-700 rounded-lg p-6 text-left animate-fade-in">
+                    <p class="text-sm font-semibold text-yellow-300 mb-2">Summary for "${keyword}":</p>
+                    <p class="text-gray-200 mb-4 italic">"${results.marketingSummary}"</p>
+
+                    <p class="text-sm font-semibold text-yellow-300 mb-2 mt-4">Suggested Taglines:</p>
+                    <ul class="list-disc list-inside space-y-1 text-gray-100">
+                        ${taglineList}
+                    </ul>
+                </div>
+            `;
+        }
+        
+        /**
+         * Calls the Gemini API to generate structured marketing copy.
+         * @param {string} userQuery - The product category keyword.
+         */
+        async function generateTaglines(userQuery) {
+            setLoadingState(true, userQuery);
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${LLM_MODEL_NAME}:generateContent?key=${apiKey}`;
+            
+            const payload = {
+                contents: [{ parts: [{ text: `Generate taglines and a summary for a product category related to: ${userQuery}` }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] },
+                generationConfig: {
+                    responseMimeType: "application/json",
+                    responseSchema: responseSchema,
+                    temperature: 0.9,
+                }
+            };
+
+            let jsonResult = null;
+            let attempts = 0;
+            const maxAttempts = 5;
+            let lastError = null;
+
+            while (attempts < maxAttempts) {
+                attempts++;
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API error: ${response.status} ${response.statusText}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                            
+                        const jsonString = result.candidates[0].content.parts[0].text;
+                        jsonResult = JSON.parse(jsonString);
+                        break; // Success
+                    } else {
+                        throw new Error("API response structure was invalid or empty.");
+                    }
+                } catch (err) {
+                    lastError = err.message;
+                    if (attempts < maxAttempts) {
+                        const delay = Math.pow(2, attempts) * 1000;
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                    }
+                }
+            }
+            
+            setLoadingState(false, userQuery);
+
+            if (jsonResult) {
+                renderResults(jsonResult, userQuery);
+            } else {
+                const resultsDiv = document.getElementById('generator-results');
+                resultsDiv.innerHTML = `<div class="text-red-400 bg-red-900/50 p-4 rounded-lg mt-4 text-sm">Failed to generate content after multiple retries. Last error: ${lastError}</div>`;
+            }
+        }
+
+        function handleTaglineSubmit(event) {
+            event.preventDefault();
+            const keyword = document.getElementById('keyword-input').value.trim();
+            if (keyword) {
+                generateTaglines(keyword);
+            }
+        }
+
+        // --- Initialization ---
+
+        window.onload = function() {
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Set dynamic company names (if they were different)
+            document.getElementById('company-name-nav').textContent = COMPANY_NAME;
+            document.getElementById('company-name-hero').textContent = COMPANY_NAME;
+            document.getElementById('company-name-footer').textContent = COMPANY_NAME;
+
+            // Start Countdown Timer
+            renderCountdown();
+            setInterval(renderCountdown, 1000);
+
+            // Attach Event Listeners
+            document.getElementById('notify-form').addEventListener('submit', handleEmailSubmit);
+            document.getElementById('tagline-form').addEventListener('submit', handleTaglineSubmit);
+
+            // Render all Lucide Icons
+            lucide.createIcons();
+        };
+
+    </script>
 </body>
 </html>
-
-
-
-
