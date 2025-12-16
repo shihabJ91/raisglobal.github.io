@@ -24,11 +24,11 @@
             animation: floatAnimation 10s ease-in-out infinite; /* Increased duration for slower movement */
         }
         @keyframes floatAnimation {
-            0% { transform: translate(-150, 150) rotate(0deg) scale(1); }
+            0% { transform: translate(-0, 0) rotate(0deg) scale(1); }
             /* Subtle drift left and down, with slight scale up */
-            25% { transform: translate(-2050px, 150px) rotate(-50deg) scale(20.02); } 
-            50% { transform: translate(-4000px, 350px) rotate(-150deg) scale(25.02); } 
-            75% { transform: translate(-2050px, 150px) rotate(-50deg) scale(30.02); } 
+            25% { transform: translate(-50%, 50%) rotate(-50deg) scale(20.02); } 
+            50% { transform: translate(-50%, 100%) rotate(-150deg) scale(25.02); } 
+            75% { transform: translate(-50%, 50%) rotate(-50deg) scale(30.02); } 
             100% { transform: translate(0, 0) rotate(0deg) scale(1); }
         }
         /* New Subtle Pulse Animation for Tagline (More Noticeable) */
@@ -418,4 +418,5 @@
     </script>
 </body>
 </html>
+
 
