@@ -22,18 +22,18 @@
         }
         /* Floating Logo Animation (Subtle Drift) */
         .animate-float {
-            animation: floatAnimation 5s ease-in-out infinite; /* Increased duration for slower movement */
+            animation: floatAnimation 15s ease-in-out infinite; /* Increased duration for slower movement */
         }
         @keyframes floatAnimation {
             0% { transform: translate(0, 0) rotate(0deg) scale(5); }
             /* Subtle drift left and down, with slight scale up */
             15% { transform: translate(-25%, -50%) rotate(-90deg) scale(5); } 
-            30% { transform: translate(-50%, -50%) rotate(-90deg) scale(10); } 
-            45% { transform: translate(-75%, -100%) rotate(-180deg) scale(15); } 
-            60% { transform: translate(-100%, -100%) rotate(-360deg) scale(20); } 
-            75% { transform: translate(-75%, -50%) rotate(-180deg) scale(15); } 
-            90% { transform: translate(-50%, -50%) rotate(-90deg) scale(10); } 
-            100% { transform: translate(-25%, 0) rotate(0deg) scale(5); }
+            30% { transform: translate(-25%, -50%) rotate(-90deg) scale(10); } 
+            45% { transform: translate(-25%, -100%) rotate(-180deg) scale(15); } 
+            60% { transform: translate(-25%, -150%) rotate(-360deg) scale(20); } 
+            75% { transform: translate(-25%, -200%) rotate(-180deg) scale(25); } 
+            90% { transform: translate(-25%, -250%) rotate(-90deg) scale(30); } 
+            100% { transform: translate(-25%, -300%) rotate(0deg) scale(40); }
         }
         /* New Subtle Pulse Animation for Tagline (More Noticeable) */
         @keyframes pulseSubtle {
@@ -422,6 +422,7 @@
     </script>
 </body>
 </html>
+
 
 
 
