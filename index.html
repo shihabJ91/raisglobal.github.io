@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAIS GLOBAL - Launching Soon</title>
+    <!-- Load Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide icons for high-quality SVG icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom styles for animations and font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Floating Logo Animation (Subtle Drift) */
+        .animate-float {
+            animation: floatAnimation 60s ease-in-out infinite; /* Increased duration for slower movement */
+        }
+        @keyframes floatAnimation {
+            0% { transform: translate(-0, 0) rotate(0deg) scale(5); }
+            /* Subtle drift left and down, with slight scale up */
+            15% { transform: translate(-25%, -25%) rotate(-0deg) scale(5); } 
+            30% { transform: translate(-25%, -25%) rotate(-0deg) scale(10); } 
+            45% { transform: translate(-25%, -25%) rotate(-180deg) scale(15); } 
+            60% { transform: translate(-25%, -25%) rotate(-0deg) scale(20); } 
+            75% { transform: translate(-25%, -25%) rotate(-0deg) scale(25); } 
+            90% { transform: translate(-25%, -25%) rotate(-90deg) scale(30); } 
+            100% { transform: translate(-25%, -25%) rotate(0deg) scale(40); }
+        }
+        /* New Subtle Pulse Animation for Tagline (More Noticeable) */
+        @keyframes pulseSubtle {
+            0%, 100% { 
+                opacity: 1; 
+                transform: scale(1);
+                /* Initial state: No glow */
+                text-shadow: 0 0 5px rgba(255, 255, 255, 0.0);
+            }
+            50% { 
+                opacity: 0.95; 
+                transform: scale(1.03); /* Larger scale change for visibility */
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Subtle glow effect */
+            }
+        }
+        .animate-pulse-subtle {
+            animation: pulseSubtle 2.5s infinite ease-in-out; /* Slightly faster cycle for more visible pulse */
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+
+    <!-- Main Container -->
+    <div class="min-h-screen flex flex-col relative overflow-hidden">
+        
+        <!-- Background Image/Overlay -->
+        <div class="absolute inset-0 z-0">
+            <!-- Placeholder image for the background -->
+            <img 
+                src="main-image.png" 
+                alt="Background" 
+                onerror="this.onerror=null; this.src='https://placehold.co/1200x800/1F2937/FFFFFF?text=Placeholder+Image';"
+                class="w-full h-full object-cover opacity-30 scale-105"
+            />
+            <div class="absolute inset-0 bg-gradient-to-tr from-gray-900 via-gray-900/80 to-blue-900/40"></div>
+        </div>
+
+        <!-- Navbar -->
+        <nav class="absolute w-full z-50 top-0 py-6">
+            <div class="container mx-auto px-6 flex justify-between items-center">
+                <span class="flex flex-col items-start">
+                    <span class="text-2xl font-bold tracking-tighter text-white flex items-center gap-2">
+                         <img 
+                            src="rais-logo.png" 
+                            alt="BoomBee Logo" 
+                            class="w-6 h-6 rounded-lg"
+                            onerror="this.onerror=null; this.src='https://placehold.co/24x24/FFFFFF/000000?text=B';"
+                        />
+                        <span id="company-name-nav">RAIS GLOBAL</span>
+                    </span>
+                    <!-- Tagline with new, more noticeable pulse animation -->
+                    <span class="text-xs font-light text-white/70 animate-pulse-subtle">
+                        <i class="italic font-normal">more than a wow...</i>
+                    </span>
+                </span>
+                <div class="flex gap-4">
+                     <!-- Social placeholders -->
+                     <a href="#" class="text-white/80 hover:text-white transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                     <a href="#" class="text-white/80 hover:text-white transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="flex-grow flex flex-col items-center justify-center relative z-10 px-4 py-20 text-center">
+            
+            <!-- FLYING LOGO ELEMENT (Visibility adjusted for all screen sizes) -->
+            <!-- Using a large, subtle version of the 'zap' icon with a slow float animation -->
+            <div id="flying-logo" class="block absolute right-2 top-10 w-20 h-20 md:w-32 md:h-32 z-0 opacity-10 text-blue-400 animate-float pointer-events-none">
+                 <img 
+                            src="rais-logo.png" 
+                            alt="BoomBee Logo" 
+                            class="w-6 h-6 rounded-lg"
+                            onerror="this.onerror=null; this.src='https://placehold.co/24x24/FFFFFF/000000?text=B';"
+                        />
+            </div>
+            <!-- /FLYING LOGO ELEMENT -->
+            
+            <div class="animate-fade-in-up">
+                
+                <span class="inline-block py-1 px-4 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-200 text-sm font-semibold mb-8 tracking-wider backdrop-blur-sm">
+                LAUNCHING SOON
+                </span>
+                
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight leading-none">
+                Something Amazing <br/> is in the Works.
+                </h1>
+                
+                <p class="text-2xl md:text-3xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed tracking-wide">
+                    We are crafting a new experience for <br/><span class="text-gray-500 text-xl font-normal">Powered by RAIS GLOBAL</span> <br class="hidden md:block"/>
+                    <span class="text-white font-extrabold">Premium Essentials</span> coming soon to Amazon & Noon.
+                </p>
+
+                <!-- Countdown Timer Container -->
+                <div id="countdown-container" class="flex flex-wrap justify-center gap-2 mt-10 mb-12">
+                    <!-- Timer boxes will be injected here by JavaScript -->
+                </div>
+
+                <!-- Email Form Container -->
+                <div class="max-w-xl mx-auto mb-12" id="email-form-container">
+                    <p class="text-gray-400 mb-4 text-sm font-medium uppercase tracking-wide">Get notified when we go live</p>
+                    <form id="notify-form" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto w-full">
+                        <input 
+                            type="email" 
+                            id="email-input"
+                            required
+                            placeholder="Enter your email address" 
+                            class="flex-1 px-6 py-4 rounded-lg text-gray-900 bg-white focus:outline-none focus:ring-4 focus:ring-blue-500/50 text-lg shadow-xl"
+                        />
+                        <button type="submit" class="px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-500 transition shadow-xl text-lg whitespace-nowrap flex items-center justify-center gap-2">
+                            <i data-lucide="bell" class="w-5 h-5"></i> Notify Me
+                        </button>
+                    </form>
+                    <div id="success-message" class="hidden"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="relative z-10 py-6 text-center text-gray-500 text-sm">
+            <p>&copy; <span id="current-year"></span> <span id="company-name-footer">raiZora</span>. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // --- Configuration ---
+        const COMPANY_NAME = "RAIS GLOBAL";
+        // Set launch date far in the future to ensure countdown runs
+        const LAUNCH_DATE_STRING = "2026-05-15T00:00:00"; 
+        const LAUNCH_DATE = new Date(LAUNCH_DATE_STRING);
+        const LLM_MODEL_NAME = 'gemini-2.5-flash-preview-09-2025';
+        const apiKey = ""; // API key is provided by the environment
+
+        // --- Utility Functions ---
+
+        /**
+         * Renders the time box element for the countdown.
+         * @param {string} val - The numeric value (e.g., '05').
+         * @param {string} label - The label (e.g., 'Days').
+         * @returns {string} The HTML string for the time box.
+         */
+        function getTimeBoxHtml(val, label) {
+            return `
+                <div class="flex flex-col items-center mx-2 md:mx-4">
+                    <div class="w-16 h-16 md:w-24 md:h-24 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center border border-white/20 shadow-2xl">
+                        <span class="text-2xl md:text-5xl font-bold text-white">${String(val).padStart(2, '0')}</span>
+                    </div>
+                    <span class="text-xs md:text-sm text-blue-200 mt-3 uppercase tracking-widest font-semibold">${label}</span>
+                </div>
+            `;
+        }
+
+        /**
+         * Calculates the remaining time until the launch date.
+         * @returns {Object} Time left in days, hours, minutes, and seconds.
+         */
+        function calculateTimeLeft() {
+            const difference = +LAUNCH_DATE - +new Date();
+            let timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
+
+            if (difference > 0) {
+                timeLeft = {
+                    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+                    minutes: Math.floor((difference / 1000 / 60) % 60),
+                    seconds: Math.floor((difference / 1000) % 60),
+                };
+            }
+            return timeLeft;
+        }
+
+        // --- Countdown Timer Logic ---
+
+        function renderCountdown() {
+            const timeLeft = calculateTimeLeft();
+            const container = document.getElementById('countdown-container');
+            
+            if (container) {
+                let timerHtml = '';
+                timerHtml += getTimeBoxHtml(timeLeft.days, 'Days');
+                timerHtml += getTimeBoxHtml(timeLeft.hours, 'Hours');
+                timerHtml += getTimeBoxHtml(timeLeft.minutes, 'Mins');
+                timerHtml += getTimeBoxHtml(timeLeft.seconds, 'Secs');
+                container.innerHTML = timerHtml;
+            }
+        }
+
+        // --- Email Form Logic (Simulated) ---
+
+        function handleEmailSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('notify-form');
+            const successMessageDiv = document.getElementById('success-message');
+
+            // Simulate form submission success
+            form.classList.add('hidden');
+            successMessageDiv.innerHTML = `
+                <div class="bg-green-500/20 border border-green-500/50 backdrop-blur-md text-white px-8 py-4 rounded-lg flex items-center gap-3 animate-fade-in mx-auto max-w-md">
+                    <i data-lucide="check" class="w-6 h-6 text-green-400"></i>
+                    <div class="text-left">
+                        <p class="font-bold">You're on the list!</p>
+                        <p class="text-sm text-green-100">Watch your inbox for the launch alert.</p>
+                    </div>
+                </div>
+            `;
+            successMessageDiv.classList.remove('hidden');
+            // Re-render lucide icons
+            lucide.createIcons();
+        }
+
+
+        // --- Gemini Tagline Generator Logic ---
+
+        const systemPrompt = "You are a world-class marketing copywriter specializing in short, catchy taglines for e-commerce products in the Middle East market. The brand is focused on high-quality essentials sold on Amazon and Noon. Generate three distinct, punchy taglines (maximum 8 words each) and one professional marketing summary (one sentence).";
+
+        const responseSchema = {
+            type: "OBJECT",
+            properties: {
+                taglines: {
+                    type: "ARRAY",
+                    description: "An array of three short, punchy marketing taglines (max 8 words each).",
+                    items: { type: "STRING" }
+                },
+                marketingSummary: {
+                    type: "STRING",
+                    description: "A single, professional sentence summarizing the product category.",
+                }
+            },
+            required: ["taglines", "marketingSummary"]
+        };
+
+        /**
+         * Updates the UI to show a loading state.
+         * @param {boolean} isLoading 
+         */
+        function setLoadingState(isLoading, keyword) {
+            const resultsDiv = document.getElementById('generator-results');
+            const generateButton = document.getElementById('generate-button');
+            const keywordInput = document.getElementById('keyword-input');
+
+            generateButton.disabled = isLoading;
+            keywordInput.disabled = isLoading;
+            generateButton.innerHTML = isLoading 
+                ? `<i data-lucide="loader" class="w-4 h-4 animate-spin"></i> Generating...`
+                : `Generate Copy <i data-lucide="wand" class="w-5 h-5"></i>`;
+            
+            if (isLoading) {
+                resultsDiv.innerHTML = `<div class="text-white mt-4 flex items-center justify-center gap-2"><i data-lucide="loader" class="w-5 h-5 animate-spin text-yellow-500"></i> Generating copy for "${keyword}"...</div>`;
+                lucide.createIcons(); // Ensure the loader icon is rendered
+            } else if (!isLoading && !resultsDiv.innerHTML.includes('Summary')) {
+                 resultsDiv.innerHTML = '';
+            }
+        }
+
+        /**
+         * Renders the structured results from the Gemini API.
+         * @param {Object} results - The parsed JSON result.
+         * @param {string} keyword - The input keyword.
+         */
+        function renderResults(results, keyword) {
+            const resultsDiv = document.getElementById('generator-results');
+            
+            if (!results || !results.taglines || !results.marketingSummary) {
+                resultsDiv.innerHTML = `<div class="text-red-400 bg-red-900/50 p-4 rounded-lg mt-4 text-sm">Error: Received incomplete or invalid data from API.</div>`;
+                return;
+            }
+
+            const taglineList = results.taglines.map(tagline => 
+                `<li class="pl-2">"${tagline}"</li>`
+            ).join('');
+
+            resultsDiv.innerHTML = `
+                <div class="bg-gray-800 border border-gray-600 rounded-lg p-6 text-left animate-fade-in shadow-lg">
+                    <p class="text-sm font-semibold text-yellow-300 mb-3 flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4"></i> Summary for "${keyword}":</p>
+                    <p class="text-gray-200 mb-4 italic leading-relaxed text-base">"${results.marketingSummary}"</p>
+
+                    <p class="text-sm font-semibold text-yellow-300 mb-2 mt-4 border-t border-gray-700 pt-4 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4"></i> Suggested Taglines:</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-100 pl-4">
+                        ${taglineList}
+                    </ul>
+                </div>
+            `;
+            // Ensure icons are rendered in the result box
+            lucide.createIcons();
+        }
+        
+        /**
+         * Calls the Gemini API to generate structured marketing copy.
+         * @param {string} userQuery - The product category keyword.
+         */
+        async function generateTaglines(userQuery) {
+            setLoadingState(true, userQuery);
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${LLM_MODEL_NAME}:generateContent?key=${apiKey}`;
+            
+            const payload = {
+                contents: [{ parts: [{ text: `Generate taglines and a summary for a product category related to: ${userQuery}` }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] },
+                generationConfig: {
+                    responseMimeType: "application/json",
+                    responseSchema: responseSchema,
+                    temperature: 0.9,
+                }
+            };
+
+            let jsonResult = null;
+            let attempts = 0;
+            const maxAttempts = 5;
+            let lastError = null;
+
+            while (attempts < maxAttempts) {
+                attempts++;
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API error: ${response.status} ${response.statusText}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                            
+                        const jsonString = result.candidates[0].content.parts[0].text;
+                        jsonResult = JSON.parse(jsonString);
+                        break; // Success
+                    } else {
+                        throw new Error("API response structure was invalid or empty.");
+                    }
+                } catch (err) {
+                    lastError = err.message;
+                    if (attempts < maxAttempts) {
+                        const delay = Math.pow(2, attempts) * 1000;
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                    }
+                }
+            }
+            
+            setLoadingState(false, userQuery);
+
+            if (jsonResult) {
+                renderResults(jsonResult, userQuery);
+            } else {
+                const resultsDiv = document.getElementById('generator-results');
+                resultsDiv.innerHTML = `<div class="text-red-400 bg-red-900/50 p-4 rounded-lg mt-4 text-sm">Failed to generate content after multiple retries. Last error: ${lastError}</div>`;
+            }
+        }
+
+        function handleTaglineSubmit(event) {
+            event.preventDefault();
+            const keyword = document.getElementById('keyword-input').value.trim();
+            if (keyword) {
+                generateTaglines(keyword);
+            }
+        }
+
+        // --- Initialization ---
+
+        window.onload = function() {
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Set dynamic company names (if they were different)
+            document.getElementById('company-name-nav').textContent = COMPANY_NAME;
+            document.getElementById('company-name-hero').textContent = COMPANY_NAME;
+            document.getElementById('company-name-footer').textContent = COMPANY_NAME;
+
+            // Start Countdown Timer
+            renderCountdown();
+            setInterval(renderCountdown, 1000);
+
+            // Attach Event Listeners
+            document.getElementById('notify-form').addEventListener('submit', handleEmailSubmit);
+            // Ensure the new tagline form listener is attached
+            //document.getElementById('tagline-form').addEventListener('submit', handleTaglineSubmit);
+
+            // Render all Lucide Icons
+            lucide.createIcons();
+        };
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
