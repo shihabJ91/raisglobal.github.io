@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Rais Global | Premium Essentials</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-green: #1B3329; 
+            --gold-light: #E2BF7D;
+            --gold-mid: #B28A41;
+            --gold-dark: #5E441D;
+        }
+
+        /* Responsive Container */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+            background: radial-gradient(circle at center, #254236 0%, #1B3329 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Bodoni Moda', serif;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Logo scales down on mobile */
+        .logo {
+            width: 75%;
+            max-width: 400px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0px 10px 8px rgba(0,0,0,0.4));
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(to bottom, var(--gold-light) 0%, var(--gold-mid) 50%, var(--gold-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .golden-projection {
+            /* 1. THE GOLD SHINE */
+            /* Use the colors from your image: light highlight to deep bronze */
+            background: linear-gradient(to bottom, #E2BF7D 20%, #B28A41 50%, #5E441D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            font-family: 'Bodoni Moda', serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+
+            /* 2. THE 3D THICKNESS (Extrusion) */
+            /* We stack multiple shadows to create the 'side' of the letter */
+            text-shadow: 
+                0px 1px 0px #7A5C22,
+                0px 2px 0px #6B4F1E,
+                0px 3px 0px #5E441D,
+                0px 4px 0px #4D3818,
+
+            /* 3. THE PROJECTION (Soft shadow on the wall) */
+            /* This creates the distance between the letter and the background */
+                0px 12px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 8vw, 3.5rem); /* Scales font based on screen size */
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+
+        p {
+            font-size: clamp(1rem, 4vw, 1.3rem);
+            margin-bottom: 35px;
+            line-height: 1.5;
+            letter-spacing: 1px;
+        }
+
+        /* Large touch-friendly button */
+        .btn {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            padding: 18px 40px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 3px;
+            color: var(--bg-green);
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-mid));
+            border-radius: 2px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+            transition: 0.3s ease;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .social-link {
+            margin-top: 40px;
+            display: inline-block;
+            font-size: 2.2rem;
+            color: var(--gold-mid);
+            text-decoration: none;
+        }
+
+        .footer-tagline {
+            margin-top: 20px;
+            font-size: 0.75rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        /* Specific Mobile Tweaks */
+        @media (max-width: 480px) {
+            .container { padding: 10px; }
+            h1 { margin-bottom: 10px; }
+            p { margin-bottom: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="logo.png" alt="RAIS GLOBAL" class="logo">
+        
+        <h1 class="golden-projection" style="margin-top:-14%;">Something Amazing<br>is in the Works.</h1>
+        
+        <p class="golden-projection">
+            We are crafting a new experience.<br>
+            Powered by RAIS GLOBAL<br>
+            Premium Essentials coming soon to Amazon & Noon.
+        </p>
+
+        <a href="http://raisglobal.com/products.html" class="btn">View Our Products</a>
+
+        <a href="https://www.instagram.com/raisglobal" target="_blank" class="social-link">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <div class="footer-tagline gold-gradient-text">INNOVATING YOUR STEPS</div>
+    </div>
+
+</body>
+</html>
