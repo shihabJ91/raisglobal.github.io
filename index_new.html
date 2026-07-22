@@ -13,10 +13,12 @@
 }
 
 body {
-    background: url('background.webp') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+
+    background: url('images/background.webp') no-repeat center center;
+    background-size: contain;
+    background-color: #000; /* Fill empty space */
 }
 
 .content {
@@ -28,11 +30,6 @@ body {
     </style>
 </head>
 <body>
-
-    <div class="content">
-        <h1>Welcome</h1>
-        <p>This content appears above the background image.</p>
-    </div>
 
 </body>
 </html>
